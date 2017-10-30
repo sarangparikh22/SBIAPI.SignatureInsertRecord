@@ -1,0 +1,34 @@
+FORMAT: 1A
+HOST: http://apiplatformcloudse-gseapicsbuleprinta-bkm6zgks.srv.ravcloud.com:8001/DigitalSignCreate
+
+# SIGNATURE - INSERT RECORD
+These APIs uses the signature image of an individual for alternate authentication in banking applications.
+
+## INSERT SIGNATURE RECORD [/]
+
+For signature record Insertion the signature image is given as binary input in the body, along
+with some non nullable inputs in the header viz: TEAM_ID , ACCOUNT_NO , NAME , SIGNATURE and MIME_TYPE.
+The captured data is stored in database. The account number should be of 11 digits. The signature image 
+input should be an image type, the format of which should be mentioned in MIME type. If details are 
+captured and stored in database successfully, a response success status should be 
+generated. If error occurs then appropriate error message will be generated. 
+
+
+### Insert [POST]
+
++ Request (multipart/formdata)
+    + Headers
+
+            api-key: ''
+            TEAM_ID : ''
+            ACCOUNT_NO : ''
+            NAME : ''
+            MIME_TYPE : ''
+            ENCODING: ''
+            IMG_SIZE: ''
+            
++ Response 200 (application/json)
+
+        {
+            "RESPONSE_STATUS": "success"
+        }
